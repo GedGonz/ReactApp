@@ -1,15 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import  Navigation  from "./components/Navigation";
 
 function App() {
   return (
     <div className="App">
 
-        <nav className="navbar navbar-dark bg-dark">
-          <div className="container">
-          <a href="" className="text-white">Task</a>
-          </div>          
-        </nav>
+       <Navigation />
         <img src={logo} className="App-logo" alt="logo" />
        
     </div>
