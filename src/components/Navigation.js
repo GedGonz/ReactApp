@@ -10,7 +10,7 @@ export class Navigation extends Component {
             <div>
                 <nav className="navbar navbar-dark bg-dark">
                     <div className="container">
-                        <a href="" className="text-white">
+                        <a href="#" className="text-white">
                             {
                                 this.props.titulo
                             }
