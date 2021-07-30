@@ -10,11 +10,15 @@ export class Navigation extends Component {
             <div>
                 <nav className="navbar navbar-dark bg-dark">
                     <div className="container">
-                        <a href="#" className="text-white">
+                        <a href="" className="text-white">
                             {
                                 this.props.titulo
                             }
+                            <span className="badge rounded-pill bg-light text-dark ml-2">
+                                {this.props.count}
+                            </span>
                         </a>
+                        
                     </div>          
                 </nav> 
             </div>
