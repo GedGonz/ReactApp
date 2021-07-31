@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import  Navigation  from "./components/Navigation";
 import { todos } from "./todos.json";
-
+import  TodoForm  from './components/TodoForm'; 
 console.log(todos)
 
 export class App extends Component {
@@ -38,11 +38,23 @@ export class App extends Component {
       <div className="App">
   
          <Navigation titulo={this.state.title } count={this.state.todos.length}/>
+        
           <div className="container">
-            <img src={logo} className="App-logo" alt="logo" />
-            <div className="row">
-               {todos}
+            <div className="row mt-4">
+              <div className="col-md-3">
+                <img src={logo} className="App-logo" alt="logo" />
+                <TodoForm />
+              </div>
+              <div className="col-md-9">
+               <div className="row">
+                   {todos}
+               </div>
+              </div>
             </div>
+            
+
+              
+              
           </div>
       </div>
     );
