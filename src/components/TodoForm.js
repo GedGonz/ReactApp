@@ -3,16 +3,38 @@ import { Component, React } from "react";
 export class TodoForm extends Component{
 
 
+constructor(){
+    super();
+    this.state={
+        title:'',
+        responsible:'',
+        description:'',
+        priority:'low'
+        };
+
+    this.handleInput=this.handleInput.bind(this); //bindea la funcion con el componente
+    this.handleSubmit=this.handleSubmit.bind(this);
+    
+}
 
 handleInput(e){
-    console.log(e.target.name);
+    const {value, name}= e.target;
+    this.setState({
+        [name]: value
+    });
+
+}
+
+handleSubmit(e){
+    e.preventDefault();
+    console.log(this.state)
 }
 
     render(){
         return (
             <div>
                 <div className="card">
-                    <form className="card-body">
+                    <form className="card-body" onSubmit={this.handleSubmit}>
                         <div className="form-group mb-2">
                             <input type="text" name="title" className="form-control" placeholder="Title" onChange={this.handleInput}/>
                         </div>
