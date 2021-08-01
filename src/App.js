@@ -19,9 +19,17 @@ export class App extends Component {
   }
 
   handleAddTodo(todo){
-
+    
     this.setState({
       todos: [...this.state.todos, todo]
+    })
+  }
+
+  removeTodo(index){
+    this.setState({
+      todos:this.state.todos.filter((e,i)=>{
+        return i !== index
+      })
     })
   }
 
@@ -40,6 +48,11 @@ export class App extends Component {
             <div className="card-body">
               <p>{todo.description}</p>
               <p><mark>{todo.responsible}</mark></p>
+            </div>
+            <div className="card-footer">
+              <button className="btn btn-danger" onClick={this.removeTodo.bind(this,i)}>
+                Delete
+              </button>
             </div>
           </div>
         </div>
